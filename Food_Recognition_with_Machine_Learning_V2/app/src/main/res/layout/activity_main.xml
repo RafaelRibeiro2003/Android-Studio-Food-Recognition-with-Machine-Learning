@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"
+        android:background="@color/color_background">
+
+        <!-- Logotipo -->
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60dp"
+            android:src="@drawable/logotipo" />
+
+        <!-- Botão para tirar a foto -->
+        <Button
+            android:id="@+id/botao_tirar_foto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/logo"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:text="Tirar Foto" />
+
+        <!-- Botão para buscar imagem na galeria -->
+        <Button
+            android:id="@+id/botao_para_galeria"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/botao_tirar_foto"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:text="Buscar Imagem na Galeria" />
+
+        <!-- Botão para ver as 100 classes -->
+        <Button
+            android:id="@+id/botao_para_ver_classes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/botao_para_galeria"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:text="Ver 100 Classes" />
+
+        <!-- Botão para ver as classes marcadas -->
+        <Button
+            android:id="@+id/botao_para_ver_classes_guardadas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/botao_para_ver_classes"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:text="Ver Classes Marcadas" />
+
+    <!-- Seleção para mudar idioma -->
+    <Spinner
+        android:id="@+id/idioma_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/botao_para_ver_classes_guardadas"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"
+        android:entries="@array/languages_array"/>
+    </RelativeLayout>

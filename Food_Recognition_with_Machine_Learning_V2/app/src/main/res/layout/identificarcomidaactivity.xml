@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Imagem -->
+    <ImageView
+        android:id="@+id/image_view"
+        android:layout_width="330sp"
+        android:layout_height="330sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10sp" />
+
+    <!-- Texto da classe identificado -->
+    <TextView
+        android:id="@+id/texto_classe_identificado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text=""
+        android:textColor="#C30000"
+        android:textStyle="bold"
+        android:textSize="27sp"
+        android:layout_below="@+id/image_view"
+        />
+
+    <!-- Texto da Percentagem -->
+    <LinearLayout
+        android:id="@+id/Percentagem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/texto_classe_identificado"
+        android:orientation="horizontal">
+
+        <!-- Mostra o Texto "Percentagem de certeza:" -->
+        <TextView
+            android:id="@+id/Percentagem_texto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Percentagem de certeza:"
+            android:layout_marginLeft="40dp"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <!-- Mostra o resultado da percentagem de certeza" -->
+        <TextView
+            android:id="@+id/resultado_percentagem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="#C30000"
+            android:textSize="21sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <!-- Botão para receita" -->
+    <Button
+        android:id="@+id/botao_para_receita"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Percentagem"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Ver Receita" />
+
+    <!-- Botão para voltar" -->
+    <Button
+        android:id="@+id/botao_voltar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/botao_para_receita"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Voltar" />
+
+</RelativeLayout>

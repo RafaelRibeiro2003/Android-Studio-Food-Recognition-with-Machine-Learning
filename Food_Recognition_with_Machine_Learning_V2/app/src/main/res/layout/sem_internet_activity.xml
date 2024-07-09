@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/no_internet_image"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:src="@drawable/no_internet_imagem"
+        android:contentDescription="@string/no_internet_image_desc"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Texto da Mensagem em Portugues-->
+    <TextView
+        android:id="@+id/sem_internet_mensagem_pt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sem conexão wi-fi/internet"
+        android:textSize="24sp"
+        android:textColor="@android:color/black"
+        android:gravity="center"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- Texto da Mensagem em Ingles-->
+    <TextView
+        android:id="@+id/sem_internet_mensagem_en"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No wifi/internet connection"
+        android:textSize="20sp"
+        android:textColor="@android:color/black"
+        android:gravity="center"/>
+
+    <!-- Botão para dar refresh-->
+    <Button
+        android:id="@+id/botao_refresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sem_internet_mensagem_en"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:text="Refresh" />
+</LinearLayout>

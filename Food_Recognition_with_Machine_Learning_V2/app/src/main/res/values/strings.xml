@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Food_Recognition_with_Machine_Learning_V2</string>
+    <string name="no_internet_image_desc">Imagem representando a falta de conexão com a internet</string>
+        <string-array name="languages_array">
+            <item>PT</item>
+            <item>EN</item>
+            <item>ES</item>
+            <item>FR</item>
+            <item>DE</item>
+            <item>KO</item>
+        </string-array>
+</resources>

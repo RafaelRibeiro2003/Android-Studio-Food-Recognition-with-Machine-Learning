@@ -1,0 +1,13 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Food_Recognition_with_Machine_Learning_V2" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+    <style name="SpinnerStyle" parent="Widget.AppCompat.Spinner">
+        <item name="android:background">#6750a4</item> <!-- Use o mesmo fundo do botão -->
+        <item name="android:textColor">@color/white</item> <!-- Use a mesma cor de texto do botão -->
+    </style>
+
+    <style name="Theme.Food_Recognition_with_Machine_Learning_V2" parent="Base.Theme.Food_Recognition_with_Machine_Learning_V2" />
+</resources>
