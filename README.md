@@ -76,4 +76,113 @@ indicado pelo texto no botão, que alterna entre "Marcar" e "Desmarcar". Quando 
 utilizador marca uma receita, ela é armazenada como favorita, facilitando o acesso no 
 futuro através da lista de classes marcadas.
 
+## 4. Interface da lista de 100 classes
+A interface da lista de 100 classes apresenta uma lista ampla de classes disponíveis, 
+permitindo que o utilizador explore as várias opções culinárias que o aplicativo é capaz 
+de identificar no momento, como apresentado nesta imagem.
+<p> <img src="fotos/interface-lista-de-100-classes.jpg" alt="login" style="margin-right: 5px; height:500px;"/> </p>
+
+Logo abaixo do título, há uma barra de pesquisa intuitiva que facilita a navegação. 
+Este recurso permite que o utilizador pesquise diretamente por uma classe específica, 
+digitando palavras-chave relacionadas. À medida que o utilizador digita, a lista é 
+filtrada em tempo real, mostrando apenas as classes que correspondem aos critérios 
+de pesquisa. Isso torna a navegação mais eficiente, especialmente quando o utilizador
+tem uma classe específica em mente. Na seguinte imagem apresenta um exemplo de pesquisa 
+de arroz.
+<p> <img src="fotos/interface-lista-de-100-classes-pesquisa.jpg" alt="login" style="margin-right: 5px; height:500px;"/> </p>
+
+Cada item na lista representa uma classe e inclui o nome da classe. Quando se clica 
+em qualquer classe na lista, é-se direcionado para a interface da receita da classe 
+correspondente. Nesta interface, como mencionado anteriormente, os utilizadores
+encontrarão a imagem representativa da classe, um resumo informativo e uma seleção 
+de três receitas relacionadas ao prato identificado.
+
+## 5. Interface da lista de classes marcadas
+Esta interface é semelhante à da lista de 100 classes, mas com uma distinção 
+importante: mostra apenas as classes marcadas. Isso é feito para tornar mais fácil os 
+utilizadores encontrarem rapidamente as classes que marcaram anteriormente, 
+tornando a experiência mais personalizada e eficiente.
+
+Ao abrir a interface, o utilizador é recebido com uma lista das classes marcadas. Ele 
+pode navegar por essa lista e, se necessário, utilizar a barra de pesquisa para encontrar 
+uma classe específica mais rapidamente.
+Essa abordagem permite que o utilizador tenha acesso facilmente a informações 
+sobre as classes que são do seu interesse, evitando a necessidade de percorrer uma
+extensa lista de classes. Desta forma, a interface de lista de classes marcadas oferece 
+uma experiência mais focada e direcionada para atender às necessidades individuais 
+dos utilizadores.
+
+Na seguinte imagem é apresentado um exemplo da lista de classes marcadas, onde constam
+as classes arroz-doce, pastel de nata e francesinha. É importante lembrar que para 
+marcar uma classe, o utilizador deve navegar pela lista, e procurar a classe desejada, 
+entrar nessa classe e clicar no botão marcar.
+<p> <img src="fotos/interface-lista-de-classes-marcadas.jpg" alt="login" style="margin-right: 5px; height:500px;"/> </p>
+
+## 6. Interface sem conexão
+A interface sem conexão, apresentada na seguinte imagem, é ativada quando não há 
+conexão ao Wi-Fi com o dispositivo móvel. Esta tela simples apresenta uma mensagem 
+clara, "Sem conexão wi-fi/Internet", indicando ao utilizador o motivo pelo qual o 
+aplicativo não pode aceder os recursos online.
+<p> <img src="fotos/interface-sem-conexao.jpg" alt="login" style="margin-right: 5px; height:500px;"/> </p>
+
+Além disso, um botão " Refresh" é apresentado que permite ao utilizador tentar uma 
+conexão novamente. Ao clicar no botão "Refresh", o aplicativo tentará verificar 
+novamente se a conexão com a internet foi estabelecida. Se sim, o utilizador será 
+encaminhado para a interface principal do aplicativo. Caso contrário, a interface sem 
+conexão será mantida até que uma conexão adequada seja restabelecida.
+
+A necessidade de uma conexão ativa com a internet está diretamente relacionada à 
+funcionalidade crucial desta aplicação: a tradução automática. Sem uma conexão com 
+a internet, o aplicativo não terá acesso aos recursos necessários para realizar traduções 
+automaticamente.
+
+## Fluxograma de interface do aplicativo
+Na seguinte imagem mostra um fluxograma que ilustra as interfaces do aplicativo 
+FoodFinder. Esses diagramas facilitam a visualização e a compreensão de como o 
+aplicativo funciona, mostrando de forma clara e organizada como cada interface está 
+interconectada e como os utilizadores podem navegar pelas diferentes secções da 
+interface.
+<p> <img src="fotos/fluxograma-de-interfaces-do-aplicativo.jpg" alt="login" style="margin-right: 5px; height:1000px;"/> </p>
+
+## SQLite Database
+Nesta secção, será abordada a integração de um banco de dados SQLite no aplicativo 
+Android, desenvolvido no Android Studio. Este capítulo centra-se na estrutura da base 
+de dados, que inclui duas tabelas principais: "classes" e "receitas". Estas tabelas são 
+essenciais para organizar e fornecer informações sobre várias receitas culinárias 
+típicas, oferecendo uma experiência rica e informativa para os turistas que querem 
+explorar a culinária local.
+
+A tabela "classes" armazena informações sobre diferentes pratos típicos. Cada 
+registo na seguinte tabela representa um prato distinto, como cozido à portuguesa, sardinha, 
+pastel de nata e entre outros. A estrutura do quadro "classes" é definida da seguinte 
+forma:
+| Atributo | Significado |
+| --------------- | --------------- |
+| identificador   | Identificador textual exclusivo para cada classe.    |
+| nome_classe    | Nome da classe.    |
+| is_marcado    | Indicador booleano que pode ser usado para marcar a classe como favorito ou destacado.    |
+| link_img    | URL da imagem representativa da classe.    |
+| texto_resumo    | Resumo descritivo sobre a classe.    |
+
+Foi decidido utilizar links do Google para as imagens da classe em vez de incluir 
+todas as 100 imagens no aplicativo. Essa abordagem resolve problemas de 
+armazenamento e desempenho a curto prazo, permitindo que o aplicativo seja mais 
+leve e rápido. 
+
+Na seguinte tabela armazena informações detalhadas sobre diferentes receitas, associadas 
+a uma classe específica. Cada registo representa uma receita individual. A estrutura da 
+tabela "receitas" é definida da seguinte forma:
+| Atributo | Significado |
+| --------------- | --------------- |
+| identificador   | Identificador textual exclusivo para cada classe.    |
+| nome_classe    | Nome da classe.    |
+| is_marcado    | Indicador booleano que pode ser usado para marcar a classe como favorito ou destacado.    |
+| link_img    | URL da imagem representativa da classe.    |
+| texto_resumo    | Resumo descritivo sobre a classe.    |
+
+
+
+
+
+
 
