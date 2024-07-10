@@ -172,13 +172,64 @@ leve e rápido.
 Na seguinte tabela armazena informações detalhadas sobre diferentes receitas, associadas 
 a uma classe específica. Cada registo representa uma receita individual. A estrutura da 
 tabela "receitas" é definida da seguinte forma:
+
 | Atributo | Significado |
 | --------------- | --------------- |
-| identificador   | Identificador textual exclusivo para cada classe.    |
-| nome_classe    | Nome da classe.    |
-| is_marcado    | Indicador booleano que pode ser usado para marcar a classe como favorito ou destacado.    |
-| link_img    | URL da imagem representativa da classe.    |
-| texto_resumo    | Resumo descritivo sobre a classe.    |
+| identificador   | Identificador textual que vincula a receita à classe correspondente.    |
+| título    | Título da receita.    |
+| site    | Nome do site onde a receita foi encontrada.    |
+| tempo    | Duração necessária para realizar a receita.    |
+| pessoas    | Número de pessoas ou unidades que a receita serve.    |
+| link    | URL direto para a receita detalhada.    |
+
+A estrutura do banco de dados foi projetada para suportar 100 classes diferentes, 
+resultando em 100 registos na tabela "classes". Como cada turma tem três receitas, a 
+tabela "receitas" conterá 300 registos (3 receitas * 100 classes).
+Na seguinte imagem é representado o modelo relacional que define a estrutura do banco 
+de dados de aplicativos desenvolvidos.
+<p> <img src="fotos/modelo-relacional-da-base-de-dados.jpg" alt="login" style="margin-right: 5px; height:300px;"/> </p>
+
+Estas duas tabelas estão relacionadas através da entidade "tem", que representa a ligação entre as classes de pratos e as receitas correspondentes.
+
+A integração dessas tabelas no aplicativo Android é feita usando SQLite, um sistema de gestão de banco de dados leve e eficiente. A criação das tabelas é realizada na classe auxiliar de banco de dados, geralmente chamada DbHelper, onde os comandos SQL acima são executados.
+
+Quando iniciado o aplicativo, as tabelas são criadas e as informações sobre classes e receitas são preenchidas. Os turistas podem então navegar pelas diferentes classes de receitas, ver as imagens representativas e ler resumos descritivos. Ao selecionar uma classe, eles podem aceder a uma lista de receitas, onde cada receita fornece detalhes como o tempo de preparação, o número de doses e um link para a receita completa.
+
+## Tradução Linguística
+Como o público-alvo desta aplicação são turistas que não falam português, foi 
+essencial implementar uma solução eficiente para a tradução de textos. Em vez de 
+manter um banco de dados extenso contendo várias traduções para cada idioma, foi 
+optado por usar Azure AI services/Translator. Este serviço permite a tradução 
+automática de textos, proporcionando uma experiência mais inclusiva e amigável para 
+os utilizadores internacionais.
+
+O Azure Translator oferece suporte para uma ampla variedade de idiomas, 
+facilitando a tradução precisa e rápida do conteúdo do aplicativo. A principal vantagem 
+de usar um serviço de tradução baseado em nuvem é a capacidade de atualizar e gerenciar traduções em tempo real, sem a necessidade de manter várias versões do 
+conteúdo no dispositivo.
+
+No entanto, uma desvantagem significativa é a necessidade de uma ligação à 
+Internet para aceder ao serviço de tradução. O processo de tradução no aplicativo é o 
+seguinte: 
+1. Verificação de conectividade: ao iniciar, o aplicativo verifica se há uma 
+conexão de rede disponível. Caso contrário, o utilizador é redirecionado para 
+uma interface que o informa sobre a falta de conexão.
+2. Configuração do Serviço de Tradução: usando a biblioteca do Retrofit é
+configurada a comunicação com a API do Azure Translator. A configuração 
+inclui definir o ponto de extremidade da API e adicionar a chave de 
+assinatura necessária para autenticação.
+3. Identificação do idioma selecionado: O aplicativo permite que os 
+utilizadores escolham o idioma desejado para tradução. Este idioma é 
+armazenado e usado para direcionar pedidos de tradução.
+4. Extração de texto para tradução: O aplicativo percorre todas as visualizações 
+de texto (TextView e Button) que precisam ser traduzidas e extrai o texto 
+original.
+5. Envio da solicitação de tradução: para cada texto, o aplicativo cria uma 
+solicitação de tradução e envia-a para o serviço Azure Translator. A 
+solicitação inclui o texto a ser traduzido e o idioma de destino.
+6. Processamento de respostas de tradução: Quando a resposta de tradução é 
+recebida, o aplicativo atualiza os textos de visualização com as traduções 
+fornecidas pelo serviço.
 
 
 
